@@ -2,6 +2,7 @@ package org.acme
 
 import io.quarkus.hibernate.orm.panache.kotlin.PanacheEntity
 import io.quarkus.hibernate.orm.panache.kotlin.PanacheCompanion
+import io.quarkus.hibernate.orm.panache.kotlin.PanacheEntityBase
 import javax.persistence.Entity
 
 /**
@@ -25,10 +26,4 @@ import javax.persistence.Entity
  * }
  */
 @Entity
-class MyKotlinEntity: PanacheEntity() {
-    companion object: PanacheCompanion<MyKotlinEntity> {
-        fun byName(name: String) = list("name", name)
-    }
-
-    lateinit var field: String
-}
+class MyKotlinEntity: PanacheEntityBase
